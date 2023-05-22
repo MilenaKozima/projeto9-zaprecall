@@ -5,7 +5,7 @@ export default function Perguntas(){
     return (
         <DivPerguntas>
             <p>Perguntas</p>
-            <img src={seta} alt="" />
+            <img data-test="play-btn" src={seta} alt="" />
         </DivPerguntas>
     );
 }

@@ -11,15 +11,15 @@ export default function Geral(){
             <img src={logo} alt="" />
             <p>ZapRecall</p>
         </DivLogo>
-            <Perguntas />
-            <Perguntas />
-            <Perguntas />
-            <Perguntas />
-            <Perguntas />
-            <Perguntas />
-            <Perguntas />
-            <Perguntas />
-            <Concluido />
+            <Perguntas data-test ="flashcard" />
+            <Perguntas data-test ="flashcard" />
+            <Perguntas data-test ="flashcard" />
+            <Perguntas data-test ="flashcard" />
+            <Perguntas data-test ="flashcard"/>
+            <Perguntas data-test ="flashcard"/>
+            <Perguntas data-test ="flashcard"/>
+            <Perguntas data-test ="flashcard"/>
+            <Concluido data-test ="footer"/>
         </DivGeral>
     );
 }
