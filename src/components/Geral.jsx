@@ -4,22 +4,23 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from './../assets/logo.png';
 
-export default function Geral(){
+export default function Geral(props){
     return (
         <DivGeral> 
         <DivLogo>
             <img src={logo} alt="" />
             <p>ZapRecall</p>
         </DivLogo>
+            {/* {props.cards.map(cartao =><Perguntas cards={cartao}></Perguntas>)} */}
+            <Perguntas cards={props.cards} data-test ="flashcard" />
+            {/* <Perguntas data-test ="flashcard" />
             <Perguntas data-test ="flashcard" />
-            <Perguntas data-test ="flashcard" />
-            <Perguntas data-test ="flashcard" />
-            <Perguntas data-test ="flashcard" />
+            <Perguntas data-test ="flashcard" /> */}
+            {/* <Perguntas data-test ="flashcard"/>
             <Perguntas data-test ="flashcard"/>
             <Perguntas data-test ="flashcard"/>
-            <Perguntas data-test ="flashcard"/>
-            <Perguntas data-test ="flashcard"/>
-            <Concluido data-test ="footer"/>
+            <Perguntas data-test ="flashcard"/> 
+            <Concluido data-test ="footer"/> */}
         </DivGeral>
     );
 }
