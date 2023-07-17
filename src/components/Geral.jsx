@@ -11,17 +11,10 @@ export default function Geral(props){
             <img src={logo} alt="" />
             <p>ZapRecall</p>
         </DivLogo>
-            {/* {props.cards.map(cartao =><Perguntas cards={cartao}></Perguntas>)} */}
-            <Perguntas cards={props.cards} data-test ="flashcard" />
-            {/* <Perguntas data-test ="flashcard" />
-            <Perguntas data-test ="flashcard" />
-            <Perguntas data-test ="flashcard" /> */}
-            {/* <Perguntas data-test ="flashcard"/>
-            <Perguntas data-test ="flashcard"/>
-            <Perguntas data-test ="flashcard"/>
-            <Perguntas data-test ="flashcard"/> 
-            <Concluido data-test ="footer"/> */}
+            {props.cards.map((cartao, index) =><Perguntas key={cartao.question} cards={cartao} index={index+1}></Perguntas>)}
+            <Concluido data-test ="footer"/>
         </DivGeral>
+        
     );
 }
 
@@ -32,6 +25,8 @@ background-color: #FB6B6B;
 display: flex;
 flex-direction: column;
 align-items: center;
+position: relative;
+flex-wrap: nowrap;
 `;
 
 const DivLogo = styled.div`
