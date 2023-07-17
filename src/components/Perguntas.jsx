@@ -108,7 +108,6 @@ p{
 const DivRepostas = styled.div`
     width: 300px;
     height: 131px;
-    background-color:#FFFFFF;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin-top: 25px;
@@ -116,6 +115,7 @@ const DivRepostas = styled.div`
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    background-color: #FFFFD4;
 p{
     font-family: 'Recursive', sans-serif;
     font-size: 18px;

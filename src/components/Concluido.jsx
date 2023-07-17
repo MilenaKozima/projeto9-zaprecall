@@ -11,7 +11,7 @@ export default function Concluido({cards, contador, setContador}) {
 const DivConcluido = styled.div`
 width: 375px;
 height: 70px;
-background-color: red;
+background-color: #FFFFFF;
 box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
 display: flex;
 justify-content: center;
