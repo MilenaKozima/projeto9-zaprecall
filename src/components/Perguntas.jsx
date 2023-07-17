@@ -31,7 +31,7 @@ export default function Perguntas({ cards, index, contador, setContador}) {
     return (
         <>
             {!pergunta ? (
-                <DivPerguntas status={status}>
+                <DivPerguntas Perguntas data-test="flashcard" status={status}>
                     <p data-test="flashcard-text">Pergunta {index}</p>
                     {status === 'errado' && <img data-test="no-icon" src={erro} alt="" />}
                     {status === 'quase' && <img data-test="partial-icon" src={qua} alt="" />}
@@ -42,7 +42,7 @@ export default function Perguntas({ cards, index, contador, setContador}) {
                 </DivPerguntas>
             )
                 : (
-                    <DivRepostas>
+                    <DivRepostas Perguntas data-test="flashcard">
                         {!resposta ? (
                             <>
                                 <p data-test="flashcard-text">{question}</p>

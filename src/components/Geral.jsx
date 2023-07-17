@@ -16,7 +16,7 @@ export default function Geral(props){
             <img src={logo} alt="" />
             <p>ZapRecall</p>
         </DivLogo>
-            {props.cards.map((cartao, index) =><Perguntas data-test="flashcard" contador={contador} setContador={setContador} key={cartao.question} cards={cartao} index={index+1}></Perguntas>)}
+            {props.cards.map((cartao, index) =><Perguntas contador={contador} setContador={setContador} key={cartao.question} cards={cartao} index={index+1}></Perguntas>)}
             <Concluido cards={cards} contador={contador} setContador={setContador} data-test ="footer"/>
         </DivGeral>
         
