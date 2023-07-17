@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export default function Concluido() {
+export default function Concluido({cards, contador, setContador}) {
     return (
         <DivConcluido>
-            Concluido
+            <p data-test="footer">{contador}/{cards.length} CONCLUÍDOS</p>
         </DivConcluido>
     );
 }

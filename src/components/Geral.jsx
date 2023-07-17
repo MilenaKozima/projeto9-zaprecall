@@ -3,16 +3,21 @@ import Perguntas from "./Perguntas";
 import React from 'react';
 import styled from 'styled-components';
 import logo from './../assets/logo.png';
+import cards from "../cards";
+import { useState } from "react";
 
 export default function Geral(props){
+
+    const [contador, setContador] = useState(0);
+
     return (
         <DivGeral> 
         <DivLogo>
             <img src={logo} alt="" />
             <p>ZapRecall</p>
         </DivLogo>
-            {props.cards.map((cartao, index) =><Perguntas key={cartao.question} cards={cartao} index={index+1}></Perguntas>)}
-            <Concluido data-test ="footer"/>
+            {props.cards.map((cartao, index) =><Perguntas data-test="flashcard" contador={contador} setContador={setContador} key={cartao.question} cards={cartao} index={index+1}></Perguntas>)}
+            <Concluido cards={cards} contador={contador} setContador={setContador} data-test ="footer"/>
         </DivGeral>
         
     );

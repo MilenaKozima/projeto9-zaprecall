@@ -6,7 +6,7 @@ import erro from './../assets/icone_erro.png';
 import qua from './../assets/icone_quase.png';
 import { useState } from "react";
 
-export default function Perguntas({ cards, index }) {
+export default function Perguntas({ cards, index, contador, setContador}) {
 
     const { question, answer } = cards;
     const [pergunta, setPergunta] = useState(false);
@@ -24,18 +24,20 @@ export default function Perguntas({ cards, index }) {
     function respondido(resp) {
         setStatus(resp)
         setPergunta(false)
+        setContador(contador+1);
+        console.log(contador);
     }
 
     return (
         <>
             {!pergunta ? (
                 <DivPerguntas status={status}>
-                    <p>Pergunta {index}</p>
-                    {status === 'errado' && <img data-test="play-btn" src={erro} alt="" />}
-                    {status === 'quase' && <img data-test="play-btn" src={qua} alt="" />}
-                    {status === 'certo' && <img data-test="play-btn" src={correto} alt="" />}
+                    <p data-test="flashcard-text">Pergunta {index}</p>
+                    {status === 'errado' && <img data-test="no-icon" src={erro} alt="" />}
+                    {status === 'quase' && <img data-test="partial-icon" src={qua} alt="" />}
+                    {status === 'certo' && <img data-test="zap-icon" src={correto} alt="" />}
                     {status !== 'errado' && status !== 'quase' && status !== 'certo' && (
-                        <img onClick={aparecerPergunta} data-test="play-btn" src={seta} alt="" />
+                        <img data-test="play-btn" onClick={aparecerPergunta} src={seta} alt="" />
                     )}
                 </DivPerguntas>
             )
@@ -43,16 +45,16 @@ export default function Perguntas({ cards, index }) {
                     <DivRepostas>
                         {!resposta ? (
                             <>
-                                <p>{question}</p>
-                                <img onClick={aparecerResposta} src={setaVirar} alt="" />
+                                <p data-test="flashcard-text">{question}</p>
+                                <img data-test="turn-btn" onClick={aparecerResposta} src={setaVirar} alt="" />
                             </>
                         ) : (
                             <>
-                                <p>{answer}</p>
+                                <p data-test="flashcard-text">{answer}</p>
                                 <Div3bot>
-                                    <button onClick={() => respondido('errado')} className="red">Não lembrei</button>
-                                    <button onClick={() => respondido('quase')} className="yellow">Quase não lembrei</button>
-                                    <button onClick={() => respondido('certo')} className="green">Zap</button>
+                                    <button data-test="no-btn" onClick={() => respondido('errado')} className="red">Não lembrei</button>
+                                    <button data-test="partial-btn" onClick={() => respondido('quase')} className="yellow">Quase não lembrei</button>
+                                    <button data-test="zap-btn" onClick={() => respondido('certo')} className="green">Zap</button>
                                 </Div3bot>
                             </>
 
